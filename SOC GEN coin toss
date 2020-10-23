@@ -1,0 +1,25 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n; cin>>n;
+    int h; cin>>h;
+    int toss=0;
+    while(n>0)
+    {
+        toss++;
+        char c; cin>>c;
+        if(c=='H'){heads++;}
+        if(c=='T'){tails++;}
+        if(heads==h)
+        {
+            break;
+        }
+    }
+    float ph=((float)heads/(float)toss)*100;
+    float pt=((float)tails/(float)toss)*100;
+    cout<< round(ph)<<" "<<round(pt)<<endl;
+    return 0;
+    
+}
