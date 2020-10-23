@@ -1,0 +1,35 @@
+brightness_5
+// C++ implementation of the above approach 
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+// Function to return digit sum 
+int digitSum(int n) 
+{ 
+    int ans = 0; 
+    while (n) { 
+        ans += n % 10; 
+        n /= 10; 
+    } 
+  
+    return ans; 
+} 
+  
+// Function to find out the smallest integer 
+int findInt(int n, int m) 
+{ 
+    int minDigit = floor(m / 9); 
+  
+    // Start of the iterator (Smallest multiple of n) 
+    int start = pow(10, minDigit) -  
+                (int)pow(10, minDigit) % n; 
+  
+    while (start < INT_MAX) { 
+        if (digitSum(start) == m) 
+            return start; 
+        else
+            start += n; 
+    } 
+    return -1; 
+} 
+  
